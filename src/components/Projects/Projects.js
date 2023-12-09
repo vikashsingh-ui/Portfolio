@@ -98,7 +98,7 @@ return (
       </h1>
       <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
         {projectData.map((project, index) => (
-          <Col key={index} md={3} className="project-card">
+          <Col key={index} md={4} className="project-card">
             <ProjectCard {...project} />
           </Col>
         ))}
