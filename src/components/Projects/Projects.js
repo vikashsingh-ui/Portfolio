@@ -1,96 +1,114 @@
+// Projects.js
+
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/leaf.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import editor from "../../Assets/Projects/codeEditor.png";
+import ProjectCard from "./ProjectCards";
+import WorkExperienceCard from "./WorkExperienceCard";
+
+// Import project images
 import chatify from "../../Assets/Projects/chatify.png";
-import suicide from "../../Assets/Projects/suicide.png";
 import bitsOfCode from "../../Assets/Projects/blog.png";
+import editor from "../../Assets/Projects/codeEditor.png";
+import leaf from "../../Assets/Projects/leaf.png";
+import suicide from "../../Assets/Projects/suicide.png";
+import intellilogo from "../../Assets/Projects/webtitle.png";
+import sarvmLogo from "../../Assets/Projects/sarvmpage.png";
+
 
 function Projects() {
-  return (
-    <Container fluid className="project-section">
-      <Particle />
-      <Container>
-        <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
-        </h1>
-        <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
-        </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={chatify}
-              isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/soumyajit4419/Chatify"
-              demoLink="https://chatify-49.web.app/"
-            />
-          </Col>
+  const projectData = [
+    {
+      imgPath: chatify,
+      isBlog: false,
+      title: "AMAZON Clone web page",
+      description: " It is clone of Amazon shopping website made using React.js where user can select their product in basket and from basket go to payment also Login and authentication done by firebase",
+      ghLink: "https://github.com/vikashsingh-ui/E-comAmazone",
+      demoLink: "https://thriving-jelly-c65aec.netlify.app/"
+    },
+    {
+      imgPath: chatify,
+      isBlog: false,
+      title: "Netflix Clone web page",
+      description: "It is clone of Netflix web application made using react.js and TMDB API , user can watch movies trailer in a popup it its available on youtube",
+      ghLink: "https://github.com/vikashsingh-ui/netflix-clone",
+      demoLink: "https://jade-churros-53aec2.netlify.app/"
+    },
+    {
+      imgPath: chatify,
+      isBlog: false,
+      title: "Quize web(MERN)",
+      description: "It is a web page  in which user can login and select any category and take a short test and see result (MERN Stack)",
+      ghLink: "https://github.com/vikashsingh-ui/MERN_Quiz",
+      demoLink: "https://singular-stroopwafel-62cfba.netlify.app/"
+    },
+    {
+      imgPath: chatify,
+      isBlog: false,
+      title: "Slack Chat web",
+      description: "It is Real time chat application made using react where user can interact with each other personally or in a group For data storing",
+      ghLink: "https://github.com/vikashsingh-ui",
+      demoLink: "https://slack-clone-f7452.web.app/"
+    },
+    // Add similar objects for other projects
+  ];
 
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={bitsOfCode}
-              isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
-              demoLink="https://blogs.soumya-jit.tech/"
-            />
-          </Col>
+  const workExperienceData = [
+    {
+      imgPath: intellilogo,
+      companyName: "IntelliEdtech",
+      position: "Full Stack Developer",
+      description: "I pioneered the transformation of education technology by concurrently managing frontend and backend development. Utilizing React Native for the frontend, I designed an intuitive interface with a dynamic content panel. On the backend, a robust Node.js server, MongoDB database, and a microservices architecture orchestrated by a load balancer ensured optimal scalability. The Teacher App introduced innovative features, fostering real-time connectivity, batch creation, and even e-commerce capabilities for selling educational resources. This project exemplified my proficiency in full-stack development and a commitment to revolutionizing education through cutting-edge technology.",
+      duration: "August 2023 - Present",
+    },
+    {
+      imgPath: sarvmLogo,
+      companyName: "Sarvm.ai",
+      position: "Software Engineer",
+      description: "I played a key role in developing web applications and cross-platform apps for household, retailer, and logistic management using Ionic, Angular, and Node.js. My contributions encompassed crucial features such as user management, efficient delivery tracking, seamless retailer-to-logistic app integration, and dynamic delivery charge configuration. This involved leveraging the capabilities of Ionic for versatile cross-platform applications, Angular for robust frontend interfaces, and Node.js for scalable backend services. My focus on enhancing user experiences and optimizing logistics underscored my commitment to delivering impactful solutions in the dynamic realm of web and app development",
+      duration: "January 2022 - July 2023",
+    },
+    // Add similar objects for other work experiences
+  ];
 
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={editor}
-              isBlog={false}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoLink="https://editor.soumya-jit.tech/"              
-            />
-          </Col>
 
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={leaf}
-              isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/soumyajit4419/Plant_AI"
-              demoLink="https://plant49-ai.herokuapp.com/"
-            />
-          </Col>
+return (
+  <Container fluid className="project-section">
+    <Particle />
+    <Container>
 
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={suicide}
-              isBlog={false}
-              title="Ai For Social Good"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-              ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
-              // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
-            />
+      {/* Work Experience Section */}
+      <h1 className="project-heading">
+        Work <strong className="purple">Experience</strong>
+      </h1>
+      <p style={{ color: "white" }}>
+        My Recent <strong className="purple">Works </strong>
+      </p>
+      <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+        {workExperienceData.map((experience, index) => (
+          <Col key={index} md={6} className="project-card">
+            <WorkExperienceCard {...experience} />
           </Col>
+        ))}
+      </Row>
 
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={emotion}
-              isBlog={false}
-              title="Face Recognition and Emotion Detection"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
-              Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
-              // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
-            />
+
+      <h1 style={{ color: "white" }}>
+        Here are a few projects I've worked on recently.
+      </h1>
+      <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+        {projectData.map((project, index) => (
+          <Col key={index} md={3} className="project-card">
+            <ProjectCard {...project} />
           </Col>
-        </Row>
-      </Container>
+        ))}
+      </Row>
+
+
+
     </Container>
-  );
+  </Container>
+);
 }
 
 export default Projects;

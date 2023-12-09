@@ -155,8 +155,8 @@ button:focus {
 }
 
 .logo {
-  height: 1.4em !important;
-  width: 2.5em !important;
+  height: 3em !important;
+  width: 3.9em !important;
 }
 
 .navbar-nav .nav-link {
@@ -466,6 +466,10 @@ button:focus {
   opacity: 0.9 !important;
   transition: all 0.5s ease 0s !important;
   height: 100% !important;
+}
+.worklogo{
+  border-radius: 10px;
+  background-color: #ffff;
 }
 .project-card-view:hover {
   transform: scale(1.02) !important;
